@@ -1,0 +1,16 @@
+[user]
+name = "Liam Dawson"
+
+[core]
+pager = "less -FRX"
+excludesfile = ~/.gitignore
+
+[color]
+ui = auto
+
+[push]
+default = current
+
+[rerere]
+enabled = true
+autoupdate = true

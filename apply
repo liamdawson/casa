@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# requirements:
+#
+# stow
+
+(
+  set -e
+  set -u
+
+  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+  
+  # changing this line is "dangerous" due to the if(s) later
+  SOURCE_LINE='eval "$($SHELL "${HOME}/.sh.d/d.sh")"'
+
+  source "${SCRIPT_DIR}/fns.sh"
+  source "${SCRIPT_DIR}/sh.d/01-vars.sh"
+  source "${SCRIPT_DIR}/sh.d/02-functions.sh"
+
+  for file in "${SCRIPT_DIR}/partials/apply"/*.sh
+  do
+    echo "Applying $file..."
+    . "$file"
+  done
+  
+  # asdf_plugin_latest adr-tools
+  # asdf_plugin_latest cmake
+  # asdf_plugin_latest terraform
+)

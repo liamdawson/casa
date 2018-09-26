@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/home/liamdawson/.local/share/Postman/Postman %u
+Name=Postman
+GenericName=Postman
+Terminal=false
+Icon=/home/liamdawson/.local/share/Postman/app/resources/app/assets/icon.png
+Comment=Graphical API Explorer
+Categories=Network;Development;
+MimeType=x-scheme-handler/tg;
+StartupWMClass=postman

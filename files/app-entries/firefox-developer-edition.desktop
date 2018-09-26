@@ -1,0 +1,25 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/home/liamdawson/.local/share/mozilla/firefox-developer-edition/firefox %u
+Name=Firefox Developer
+GenericName=Firefox Developer Edition
+Terminal=false
+Icon=/home/liamdawson/.local/share/mozilla/firefox-developer-edition/browser/chrome/icons/default/default128.png
+Comment=Developer edition of the Firefox web browser.
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+StartupWMClass=Firefox Developer Edition
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/home/liamdawson/.local/share/mozilla/firefox-developer-edition/firefox --new-window %u
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=/home/liamdawson/.local/share/mozilla/firefox-developer-edition/firefox --private-window %u

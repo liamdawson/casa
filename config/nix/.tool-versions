@@ -1,0 +1,8 @@
+python 2.7.15 3.7.0
+ruby 2.5.1
+adr-tools 3.0.0
+dotnet-core 2.1.4
+golang 1.11
+cmake 3.9.6
+nodejs 8.12.0
+terraform 0.11.8

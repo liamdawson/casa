@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+PINENTRY_ORDER=(
+  /usr/local/bin/pinentry-mac
+  /usr/bin/pinentry-qt
+  /usr/bin/pinentry-curses
+  /usr/local/bin/pinentry-curses
+  /usr/bin/pinentry
+  /usr/local/bin/pinentry
+)
+
+for PROG in "${PINENTRY_ORDER[@]}"
+do
+  if [[ -x "$PROG" ]]
+  then
+    $PROG $@
+    exit $?
+  fi
+done
+
+echo 'no acceptable pinentry found' >&2
+exit 127

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Comment[en_AU]=Launch the Sonos Controller
+Comment=Launch the Sonos Controller
+Exec=env WINEPREFIX="/home/liamdawson/.wine" wine 'C:\\Program Files (x86)\\Sonos\\Sonos.exe'
+GenericName[en_AU]=
+GenericName=
+Icon=17FB_Sonos.exe_89463FCDFA9043C3B73EE6707A590460.0
+MimeType=
+Name[en_AU]=Sonos
+Name=Sonos
+Path=/home/liamdawson/.wine/dosdevices/c:/Program Files (x86)/Sonos/
+StartupNotify=true
+StartupWMClass=sonos.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

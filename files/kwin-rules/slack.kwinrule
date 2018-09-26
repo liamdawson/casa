@@ -1,0 +1,7 @@
+[Slack icon]
+Description=Slack icon
+desktopfile=slack_slack
+desktopfilerule=2
+wmclass=slack
+wmclasscomplete=false
+wmclassmatch=1

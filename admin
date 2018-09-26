@@ -1,0 +1,108 @@
+#!/bin/bash
+
+# NOTE: assumes an Ubuntu environment
+
+(
+  set -u
+  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+  LOGNAME="$(logname)"
+
+  set +u
+  for filename in "${SCRIPT_DIR}/sh.d"/*.sh
+  do
+    . "$filename"
+  done
+
+  source "${SCRIPT_DIR}/fns.sh"
+  
+  set -e
+  set -u
+
+  for filename in "${SCRIPT_DIR}/partials"/admin/*.sh
+  do
+    . "$filename"
+  done
+
+  # TODO: install following packages in non-Linux envs
+  _not_linux exit 0
+
+  
+  # install VS Code, if it's missing
+  if ! which code >/dev/null 2>&1
+  then
+    curl -o code.deb -sSL https://go.microsoft.com/fwlink/?LinkID=760868
+    dpkg -i code.deb || apt --fix-broken install
+    rm code.deb
+  fi
+  
+  # install keybase, if it's missing
+  if ! which run_keybase >/dev/null 2>&1
+  then
+    curl -o keybase.deb -sSL https://prerelease.keybase.io/keybase_amd64.deb
+    dpkg -i keybase.deb || apt-get install -f -y
+    rm keybase.deb
+  fi
+  
+  # install slack, if it's missing
+  command -v slack >/dev/null 2>&1 || snap install slack --classic
+
+  # install telegram, if it's missing
+  command -v telegram-desktop >/dev/null 2>&1 || snap install telegram-desktop
+
+  # install simplenote, if it's missing
+  command -v simplenote >/dev/null 2>&1 || snap install simplenote
+
+  # install insomnia, if it's missing
+  command -v insomnia >/dev/null 2>&1 || snap install insomnia
+
+  # install docker, if it's missing
+  if ! which docker >/dev/null 2>&1
+  then
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    add-apt-repository -y \
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable"
+
+    apt install -y docker-ce
+  fi
+
+  # install tails-installer, if it's missing
+  if ! command -v tails-installer >/dev/null 2>&1
+  then
+    add-apt-repository -y ppa:tails-team/tails-installer
+    apt install -y tails-installer
+  fi
+
+  if [[ -n "${NEW_WINE_INSTALL:-}" ]]
+  then
+    winecfg
+
+    # Sonos needs some of these
+    winetricks dotnet40
+    winetricks vcrun2008
+    winetricks vcrun2010
+    winetricks directx9
+    winetricks d3dx9
+    winetricks d3dx9_26
+    winetricks d3dx9_28
+    winetricks d3dx9_31
+    winetricks d3dx9_35
+    winetricks d3dx9_36
+    winetricks d3dx9_39
+    winetricks d3dx9_42
+    winetricks d3dx9_43
+    winetricks d3dx10
+    winetricks d3dx11_42
+    winetricks d3dx11_43
+    winetricks xact
+    winetricks xact_jun2010
+    winetricks physx
+    winetricks xinput
+  fi
+
+  # pretend Chromium is Google Chome
+  [[ -f '/usr/bin/google-chrome' ]] || ln -s "$(command -v chromium-browser)" "/usr/bin/google-chrome"
+
+  echo 'fs.inotify.max_user_watches = 524288' > /etc/sysctl.d/60-max-user-watches.conf
+)

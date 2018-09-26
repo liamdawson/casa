@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ $# -ne 1 ]]
+then
+  echo "usage: $0 image-path"
+  exit 1
+fi
+
+IMAGE_PATH="$1"
+
+kwriteconfig5 --file "${XDG_CONFIG_HOME:-${HOME}/.config}/kscreenlockerrc" --group Greeter --group Wallpaper --group org.kde.image --group General --key Image "$IMAGE_PATH"

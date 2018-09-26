@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ $# -ne 1 ]]
+then
+  echo "usage: $0 image-path"
+  exit 1
+fi
+
+IMAGE_PATH="$1"
+
+kwriteconfig5 --file /usr/share/sddm/themes/breeze/theme.conf.user --group General --key background custom.png
+kwriteconfig5 --file /usr/share/sddm/themes/breeze/theme.conf.user --group General --key 'type' image
+
+cp "$IMAGE_PATH" /usr/share/sddm/themes/breeze/custom.png

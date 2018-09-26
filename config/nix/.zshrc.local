@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+[[ -r "${ZDOTDIR:-${HOME}}/.zshrc.machine" ]] && source "${ZDOTDIR:-${HOME}}/.zshrc.machine"
+
+[[ -r "${HOME}/.profile" ]] && source "${HOME}/.profile"
+
+for filename in ${HOME}/.sh.d/*.sh
+do
+  source "$filename"
+done
+
+PROMPT=' %B%(!.%K{red}.)%F{cyan}%n@%b%F{green}%m%F{blue}%k:%B%0~%# %f%b'
+RPROMPT='%(?.%F{green}.%F{red}%B)%?%f%b'
+
+alias tm="tmux new"

@@ -1,0 +1,11 @@
+[Alacritty icon]
+Description=Alacritty icon
+desktopfile=alacritty
+desktopfilerule=2
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+wmclass=alacritty
+wmclasscomplete=false
+wmclassmatch=1
