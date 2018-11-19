@@ -4,8 +4,6 @@
   set -e
   set -u
 
-  exit 0
-
 if [[ ! -d "${PYENV_ROOT}" ]]
 then
   git clone https://github.com/pyenv/pyenv.git "${PYENV_ROOT}"
@@ -26,12 +24,10 @@ for version in $(cat "${PYENV_ROOT}/version")
 do
   if command -v brew >/dev/null 2>&1
   then
-    CFLAGS="-I$(brew --prefix openssl)/include" \
-    CPPFLAGS="-I$(brew --prefix openssl)/include" \
-    LDFLAGS="-L$(brew --prefix openssl)/lib" \
-    pyenv install -sv "$version"
+    LIBRARY_PATH="${LIBRARY_PATH:-}:$(brew --prefix openssl)/lib" \
+    pyenv install -s "$version"
   else
-    pyenv install -sv "$version"
+    pyenv install -s "$version"
   fi
 done
 )

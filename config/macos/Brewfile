@@ -32,4 +32,6 @@ brew 'pkg-config'
 brew 'autoconf'
 brew 'automake'
 brew 'zsh'
-brew 'tmux
+brew 'tmux'
+brew 'dnsmasq'
+brew 'nginx'
