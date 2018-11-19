@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if command -v xdg-open >/dev/null 2>/dev/null
+then
+  xdg-open $@
+  exit $?
+elif command -v open >/dev/null 2>/dev/null
+then
+  open $@
+  exit $?
+else
+  echo 'neither xdg-open nor open were found...' >&2
+  exit 127
+fi
