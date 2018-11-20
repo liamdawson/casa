@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(
+  set -e
+  set -u
+
+  docker inspect 'throwaway-postgres' >/dev/null 2>/dev/null || docker run -d -p 5432:5432 --name 'throwaway-postgres' postgres:9.6
+  docker start throwaway-postgres
+)
