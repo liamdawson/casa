@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BINARY_ORDER=(
+  vim
+  vi
+  nano
+)
+
+for PROG in "${BINARY_ORDER[@]}"
+do
+  if command -v "$PROG" >/dev/null 2>&1
+  then
+    # args to wrapped bin
+    # shellcheck disable=2068
+    $PROG $@
+    exit $?
+  fi
+done
+
+echo 'no acceptable git editor found' >&2
+exit 127

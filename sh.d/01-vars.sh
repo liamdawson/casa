@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export EDITOR="vim"
-export VISUAL="code"
+export VISUAL="code --wait"
 
 case "$(uname -s)" in
   Darwin) export _HOST_ID="macos";;
