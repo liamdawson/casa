@@ -35,3 +35,5 @@ brew 'zsh'
 brew 'tmux'
 brew 'dnsmasq'
 brew 'nginx'
+brew 'libtool'
+

@@ -14,6 +14,7 @@ fi
 cat << EOF > "${PYENV_ROOT}/default-packages"
 pip
 pipsi; python_version > '3.3'
+awscli; python_version > '3.3'
 EOF
 
 echo '3.7.1 2.7.15' > "${PYENV_ROOT}/version"
