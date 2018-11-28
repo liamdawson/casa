@@ -8,4 +8,5 @@
 
   defaults write -g com.apple.mouse.scaling 3
   defaults write -g ApplePressAndHoldEnabled 0
+  defaults write com.apple.finder AppleShowAllFiles YES
 )
