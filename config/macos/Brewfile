@@ -37,3 +37,9 @@ brew 'dnsmasq'
 brew 'nginx'
 brew 'libtool'
 cask 'mono-mdk'
+mas 'Simplenote', id: 692867256
+mas 'Trello', id: 1278508951
+mas 'NordVPN', id: 1116599239
+mas 'The Unarchiver', id: 425424353
+mas 'Xcode', id: 497799835
+mas 'Textual 7', id: 1262957439
