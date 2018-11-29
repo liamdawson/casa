@@ -22,6 +22,14 @@ else
 fi
 
 [[ -d "/usr/local/bin" ]] && export PATH="/usr/local/bin:${PATH}"
+[[ -d "/usr/local/sbin" ]] && export PATH="/usr/local/sbin:${PATH}"
+if [[ -d "/private/etc/paths.d/" ]]
+then
+  for file in /private/etc/paths.d/*
+  do
+    export PATH="$(cat $file):$PATH"
+  done
+fi
 
 export DOTNETCORE_ROOT="${XDG_DATA_HOME}/dotnet"
 export PATH="$PATH:${DOTNETCORE_ROOT}"
