@@ -14,6 +14,7 @@ license_finder
 foreman
 lolcat
 solargraph
+rubocop
 EOF
 
 echo '2.5.3' > "${RBENV_ROOT}/version"
