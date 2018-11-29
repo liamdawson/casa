@@ -35,6 +35,13 @@ function _windows_only() {
   fi 
 }
 
+function _not_windows() {
+  if ! [[ $_HOST_ID == "windows" ]] 
+  then 
+    $@ 
+  fi 
+}
+
 function command-exists() {
   command -v "$1" >/dev/null 2>&1
   return $?
