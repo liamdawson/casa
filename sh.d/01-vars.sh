@@ -32,7 +32,7 @@ then
 fi
 
 export DOTNETCORE_ROOT="${XDG_DATA_HOME}/dotnet"
-export PATH="$PATH:${DOTNETCORE_ROOT}"
+export PATH="$PATH:${DOTNETCORE_ROOT}:${HOME}/.dotnet/tools"
 
 export GOENV_ROOT="${XDG_DATA_HOME}/goenv"
 [[ ! -z "${GOPATH:-}" ]] || export GOPATH="${HOME}/go"
@@ -50,3 +50,9 @@ export PATH="$PATH:${RBENV_ROOT}/bin"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export PATH="$PATH:${CARGO_HOME}/bin"
+
+# macos Android SDK tools
+if [[ -d "${HOME}/Library/Android/sdk/platform-tools" ]]
+then
+  export PATH="${PATH}:${HOME}/Library/Android/sdk/platform-tools"
+fi
