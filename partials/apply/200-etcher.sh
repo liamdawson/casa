@@ -20,7 +20,7 @@
   }
 
   function install_macos() {
-    [[ -d "/Applications/Etcher.app" ]] || _install_remote_dmg "https://github.com/balena-io/etcher/releases/download/v1.4.8/balenaEtcher-1.4.8.dmg"
+    [[ -d "/Applications/balenaEtcher.app" ]] || _install_remote_dmg "https://github.com/balena-io/etcher/releases/download/v1.4.8/balenaEtcher-1.4.8.dmg"
   }
 
   _macos_only install_macos
