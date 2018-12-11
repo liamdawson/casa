@@ -31,7 +31,9 @@ then
   done
 fi
 
-export DOTNETCORE_ROOT="${XDG_DATA_HOME}/dotnet"
+export DOTNET_ROOT="${XDG_DATA_HOME}/dotnet"
+export DOTNETCORE_ROOT="${DOTNET_ROOT}"
+# TODO: is this second one used?
 export PATH="$PATH:${DOTNETCORE_ROOT}:${HOME}/.dotnet/tools"
 
 export GOENV_ROOT="${XDG_DATA_HOME}/goenv"

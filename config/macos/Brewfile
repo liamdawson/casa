@@ -36,6 +36,7 @@ brew 'tmux'
 brew 'dnsmasq'
 brew 'nginx'
 brew 'libtool'
+brew 'git'
 cask 'mono-mdk'
 mas 'Simplenote', id: 692867256
 mas 'Trello', id: 1278508951
