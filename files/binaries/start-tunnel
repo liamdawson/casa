@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+(
+  set -e
+  set -u
+
+  ssh -fN $@
+)
+
+# expected ssh_config format:
+# Host $TUNNEL_NAME
+#   HostName <fqdn>
+#   RemoteForward <local_port> <remote_fqdn>:<remote_port>
+#   ControlPath ~/.ssh/$TUNNEL_NAME.ctl
