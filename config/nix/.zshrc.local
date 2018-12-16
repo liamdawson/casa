@@ -9,7 +9,7 @@ do
   source "$filename"
 done
 
-PROMPT=' %B%(!.%K{red}.)%F{cyan}%n@%b%F{green}%m%F{blue}%k:%B%0~%# %f%b'
+PROMPT=' %B%(!.%K{red}.)%F{blue}%n@%b%F{green}%m%F{blue}%k:%B%0~%# %f%b'
 RPROMPT='%(?.%F{green}.%F{red}%B)%?%f%b'
 
 alias tm="tmux new"
