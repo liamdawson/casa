@@ -10,5 +10,5 @@
 # expected ssh_config format:
 # Host $TUNNEL_NAME
 #   HostName <fqdn>
-#   RemoteForward <local_port> <remote_fqdn>:<remote_port>
+#   LocalForward 127.0.0.1:<local_port> <remote_fqdn>:<remote_port>
 #   ControlPath ~/.ssh/$TUNNEL_NAME.ctl
