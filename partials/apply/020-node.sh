@@ -27,6 +27,8 @@
   install_plugin https://github.com/nodenv/nodenv-default-packages.git "nodenv-default-packages"
   install_plugin https://github.com/nodenv/nodenv-package-rehash.git "nodenv-package-rehash"
 
+  nodenv package-hooks install --all
+
   cat << EOF > "${NODENV_ROOT}/default-packages"
 npm
 yarn
