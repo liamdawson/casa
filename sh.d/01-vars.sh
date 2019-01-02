@@ -56,5 +56,6 @@ export PATH="$PATH:${CARGO_HOME}/bin"
 # macos Android SDK tools
 if [[ -d "${HOME}/Library/Android/sdk/platform-tools" ]]
 then
+  export ANDROID_HOME="${HOME}/Library/Android/sdk"
   export PATH="${PATH}:${HOME}/Library/Android/sdk/platform-tools"
 fi
