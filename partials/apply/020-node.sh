@@ -40,6 +40,6 @@ webpack
 emoj
 EOF
 
-  echo '8.12.0' > "${NODENV_ROOT}/version"
+  echo '10.15.0' > "${NODENV_ROOT}/version"
   nodenv install -s "$(cat ${NODENV_ROOT}/version)"
 )
