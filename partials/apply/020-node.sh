@@ -7,14 +7,14 @@
   function install_plugin() {
     [[ -d "${NODENV_ROOT}/plugins" ]] || mkdir "${NODENV_ROOT}/plugins"
 
-    pushd "${NODENV_ROOT}/plugins"
+    pushd "${NODENV_ROOT}/plugins" >/dev/null
 
     if [[ ! -d "$2" ]]
     then
       git clone "$1" "$2"
     fi
 
-    popd
+    popd >/dev/null
   }
 
   if [[ ! -d "${NODENV_ROOT}" ]]
