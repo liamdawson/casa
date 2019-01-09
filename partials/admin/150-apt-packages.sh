@@ -61,6 +61,7 @@ zlib1g-dev \
 cmake \
 libfreetype6-dev \
 libfontconfig1-dev \
-xclip
+xclip \
+automake
 
 )
