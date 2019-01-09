@@ -7,8 +7,7 @@
   _not_linux exit 0
 
   # KDE backports
-
-  if [[ ! -f "/etc/apt/sources.list.d/kubuntu-ppa-ubuntu-backports-bionic.list" ]]
+  if [[ ! -f "/etc/apt/sources.list.d/kubuntu-ppa-ubuntu-backports-bionic.list" && ! -f "/etc/apt/sources.list.d/kubuntu-ppa-backports-bionic.list" ]]
   then
     add-apt-repository -y ppa:kubuntu-ppa/backports
   fi

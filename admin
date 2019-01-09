@@ -58,11 +58,10 @@
   # install docker, if it's missing
   if ! which docker >/dev/null 2>&1
   then
+    # for Linux Mint:
+    # grep "UBUNTU_CODENAME" /etc/os-release | awk --field-separator '=' '{ print $2 }'
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-    add-apt-repository -y \
-       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-       $(lsb_release -cs) \
-       stable"
+    add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(_ubuntu_codename) stable"
 
     apt install -y docker-ce
   fi
@@ -71,6 +70,7 @@
   if ! command -v tails-installer >/dev/null 2>&1
   then
     add-apt-repository -y ppa:tails-team/tails-installer
+    apt update -y
     apt install -y tails-installer
   fi
 

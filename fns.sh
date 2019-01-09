@@ -18,3 +18,8 @@ function _install_remote_dmg {
   rm -rf $tempd
   set +x
 }
+
+function _ubuntu_codename() {
+  # TODO: does this work on Ubuntu?
+  grep "UBUNTU_CODENAME" /etc/os-release | awk --field-separator '=' '{ print $2 }'
+}

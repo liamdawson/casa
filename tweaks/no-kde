@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+(
+  set -e
+  set -u
+
+  sudo touch /etc/apt/sources.list.d/kubuntu-ppa-backports-bionic.list
+)
