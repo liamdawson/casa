@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pushd "${CASA_DIR:-"${HOME}/workspace/casa"}" >/dev/null
+bash apply
+popd
