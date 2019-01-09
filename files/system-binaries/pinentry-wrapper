@@ -2,6 +2,7 @@
 
 PINENTRY_ORDER=(
   /usr/local/bin/pinentry-mac
+  /usr/bin/pinentry-gnome3
   /usr/bin/pinentry-qt
   /usr/bin/pinentry-curses
   /usr/local/bin/pinentry-curses
