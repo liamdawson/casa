@@ -4,6 +4,8 @@
   set -e
   set -u
 
+  _not_macos exit 0
+  
   ETC_HOME="$(brew --prefix)/etc/"
 
   [[ -d "$ETC_HOME" ]] || mkdir -p "$ETC_HOME"
