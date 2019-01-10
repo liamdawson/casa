@@ -2,7 +2,7 @@
 set -eux
 
 CASA_DIR="$( cd "$(dirname "$0")/.." ; pwd -P )"
-source "${CASA_DIR}/bin/_common.sh"
+source "${CASA_DIR}/_common.sh"
 
 
 function _linux_install() {
@@ -28,7 +28,7 @@ function _common_install() {
 if command-exists apt-get
 then
   sudo apt-get update -y
-  sudo apt-get install -y git-core build-essential
+  sudo apt-get install -y git build-essential curl file
   _linux_install
 else
   echo "TODO: "

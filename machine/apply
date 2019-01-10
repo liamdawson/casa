@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+(
+  set -eu
+
+  THIS_SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+  source "${THIS_SCRIPT_DIR}/../_common.sh"
+
+  for file in "${THIS_SCRIPT_DIR}/"???-*.sh
+  do
+    . $file
+  done
+)
+
