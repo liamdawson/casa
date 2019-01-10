@@ -8,11 +8,12 @@
     curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -NoPath -InstallDir "${DOTNETCORE_ROOT}"
   fi
 
-  function _install_tool() {
+  function _install() {
     if ! command-exists $1
+    then
       dotnet tool install --global $1
     fi
   }
 
-  _install_tool dotnet-outdated
+  _install dotnet-outdated
 )
