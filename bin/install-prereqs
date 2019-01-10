@@ -6,6 +6,9 @@ source "${CASA_DIR}/bin/_common.sh"
 
 
 function _linux_install() {
+  # install linuxbrew
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
   _common_install
 }
 
