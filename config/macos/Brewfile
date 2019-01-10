@@ -40,6 +40,7 @@ brew 'git'
 brew 'carthage'
 cask 'mono-mdk'
 cask '1password-cli'
+cask 'insomnia'
 mas 'Simplenote', id: 692867256
 mas 'Trello', id: 1278508951
 mas 'NordVPN', id: 1116599239
