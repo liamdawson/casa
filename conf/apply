@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(
+  set -eu
+
+  CONF_SRC_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+
+  stow -d "${CONF_SRC_DIR}" -t "${HOME}" -R common shell
+)
