@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -eux
+
+CASA_DIR="$( cd "$(dirname "$0")/.." ; pwd -P )"
+source "${CASA_DIR}/bin/_common.sh"
+
+
+function _linux_install() {
+  _common_install
+}
+
+function _macos_install() {
+  _common_install
+}
+
+function _common_install() {
+  echo "TODO: "
+  exit 1
+}
+
+if command-exists apt-get
+then
+  sudo apt-get install -y git-core build-essential
+  _linux_install
+else
+  echo "TODO: "
+  exit 1
+fi
