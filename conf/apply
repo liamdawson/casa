@@ -5,5 +5,15 @@
 
   CONF_SRC_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
-  stow -d "${CONF_SRC_DIR}" -t "${HOME}" -R common shell
+  _CONF_MODULES=( common shell )
+
+  if command -v uname >/dev/null 2>&1
+  then
+    _CONF_MODULES+=("$(uname -s | tr '[A-Z]' '[a-z]')")
+  fi
+
+  for module in "${_CONF_MODULES[@]}"
+  do
+    stow --no-folding -d "${CONF_SRC_DIR}" -t "${HOME}" -R "$module"
+  done
 )

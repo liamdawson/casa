@@ -12,6 +12,7 @@ function _linux_install() {
 
   _common_install
 
+  set +e
   echo
   echo 'add brew to path with:'
   echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
