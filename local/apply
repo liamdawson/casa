@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+(
+  set -eu
+
+  THIS_SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+
+  sudo "$(command -v stow)" --no-folding -d "${THIS_SCRIPT_DIR}" -t "/usr" -R usr
+)
+
